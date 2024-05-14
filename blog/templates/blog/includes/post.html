@@ -2,12 +2,12 @@
 
 <li>
     <article class="post">
-        <a href="{% url "post-detail-page" slug="web-development" %}">
-            <img src="{% static "blog/images/web-dev.jpg" %}" alt="Web Development">
+        <a href="{% url "post-detail-page" slug=post.slug  %}">
+            <img src="{% static "blog/images/"|add:post.image %}" alt="{{ post.title }}">
             <div class="post__content">
-                <h3>Meow-some Adventures in HTML: Ninó's Introduction to Web Development</h3>
+                <h3>{{ post.title }}</h3>
 
-                <p>{{ "Join Ninó on his coding journey as he delves into the basics of HTML, the language of the web. From <head> to <body>, Ninó shares his experiences and insights into crafting purr-fectly structured web pages." }}</p>
+                <p>{{ post.excerpt }}</p>
             </div>
         </a>
     </article>
