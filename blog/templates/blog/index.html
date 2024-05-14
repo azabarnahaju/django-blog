@@ -1,9 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block page_title %}
     My Blog
 {% endblock %}
 
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>Welcome to my blog</h1>
+
+
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/nino-6.jpg" %}" alt="Ninó - The Author of This Blog">
+            <h2>NINÓ'S BLOG</h2>
+        </header>
+        <p>Hi, I'm Ninó, a cat learning coding. I love cat treats and watching the birds from the window!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% include "blog/includes/post.html" %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>
+            Meow! 🐾 I'm Ninó, a coding cat with a passion for crafting purr-fect websites.
+            Join me on my journey through the world of web development as I sharpen my claws and conquer coding challenges one paw print at a time.
+            Paws and keyboards at the ready—let's embark on this meow-some adventure together!
+        </p>
+    </section>
 {% endblock %}
