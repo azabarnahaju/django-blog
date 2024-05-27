@@ -9,10 +9,18 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
     email_address = models.EmailField(unique=True)
 
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
+
+    def __str__(self):
+        return self.full_name()
+
 
 class Tag(models.Model):
     caption = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.caption
 
 class Post(models.Model):
     title = models.CharField(max_length=150)
@@ -23,3 +31,6 @@ class Post(models.Model):
     excerpt = models.CharField(max_length=300)
     tags = models.ManyToManyField(Tag)
     slug = models.SlugField(unique=True, db_index=True)     # db_index is already set to True because of the SlugField and because of the unique attribute
+
+    def __str__(self):
+        return f'{self.title} by {self.author}'
