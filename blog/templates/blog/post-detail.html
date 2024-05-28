@@ -25,6 +25,20 @@
             <span class="tag">{{ tag.caption }}</span>
             {% endfor %}
         </div>
+        <div>
+            <form action="{% url "read-later-page" %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ post.id }}" name="post_id">
+                <button id="read-later-btn">
+                    {% if is_saved_for_later %}
+                        Remove from Read Later
+                    {% else %}
+                        Read Later
+                    {% endif %}
+                </button>
+            </form>
+
+        </div>
         <article>
             <img src="{{ post.image.url }}" alt="{{ post.title }}">
             <address><a href="{{ "mailto:"|add:post.author.email_address }}">By {{ post.author }}</a></address>

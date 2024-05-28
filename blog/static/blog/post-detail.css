@@ -172,3 +172,18 @@ main {
   box-shadow: 0 2px 8px gray;
   padding: 1rem
 }
+
+#read-later-btn {
+  margin: 2rem 0;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: white;
+  cursor:pointer;
+}
+
+#read-later-btn:hover {
+  background-color: white;
+  color: #390281;
+}
