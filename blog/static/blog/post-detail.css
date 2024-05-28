@@ -119,3 +119,56 @@ main {
   padding: 0.25rem;
   border-radius: 0.5em;
 }
+
+.errorlist {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  color: darkred;
+}
+
+.invalid label {
+  color: darkred;
+}
+
+.invalid input,
+.invalid textarea {
+  border-color: darkred;
+  background-color: #e19191;
+}
+
+#error-alert {
+  margin: 8rem auto 3rem auto;
+  border: 1px solid darkred;
+  background-color: #e19191;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+}
+
+#error-alert a {
+  text-decoration: none;
+  border: 1px solid darkred;
+  background-color: darkred;
+  color: white;
+  padding: 0.25rem 1.5rem;
+  border-radius: 0.5em;
+}
+
+.comment {
+  border: 1px solid #38037a;
+  background-color: #d4c6ea;
+  border-radius: 0.5em;
+  list-style: none;
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+#comments {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 60rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px gray;
+  padding: 1rem
+}
