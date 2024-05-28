@@ -22,11 +22,12 @@ class Tag(models.Model):
     def __str__(self):
         return self.caption
 
+
 class Post(models.Model):
     title = models.CharField(max_length=150)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, related_name='posts', null=True)
     content = models.TextField(validators=[MinLengthValidator(10)])
-    image = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="posts", null=True)
     date = models.DateTimeField(auto_now=True)
     excerpt = models.CharField(max_length=300)
     tags = models.ManyToManyField(Tag)
